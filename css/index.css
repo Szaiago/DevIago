@@ -25,7 +25,8 @@ body {
     height: 75vh;
     margin: auto;
     border-radius: 30px;
-    background-color: var(--colorSecundaria);
+    background-color: var(--colorTerciaria);
+    box-shadow: 0 0 7px black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,8 +35,118 @@ body {
 .moldura-monitor {
     width: 63.5vw;
     height: 72vh;
-    border: 3px solid var(--colorTerciaria);
+    border: 3px solid var(--colorSecundaria);
     border-radius: 25px;
+    background-color: var(--colorSecundaria);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.componenetes-monitor {
+    width: 61vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    min-height: 70vh;
+}
+.tela-monitor {
+    width: 61vw;
+    height: 60vh;
+    border-radius: 25px;
+    background-color: var(--colorTerciaria);
+}
+.functions-monitor {
+    width: 61vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.click,
+.click *,
+.click :after,
+.click :before,
+.click:after,
+.click:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.click {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: button;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+  padding: 0;
+}
+.click:disabled {
+  cursor: default;
+}
+.click:-moz-focusring {
+  outline: auto;
+}
+.click svg {
+  display: block;
+  vertical-align: middle;
+}
+.click [hidden] {
+  display: none;
+}
+.click {
+  --progress: 15px;
+  background: #ff7b00;
+  bottom: var(--progress);
+  box-sizing: border-box;
+  color: #000;
+  display: block;
+  font-weight: 900;
+  -webkit-mask-image: none;
+  padding: 1.2rem 3rem;
+  perspective: 800px;
+  position: relative;
+  text-transform: uppercase;
+  transform: rotateX(55deg) rotate(25deg);
+  transform-style: preserve-3d;
+  transition: bottom 0.2s;
+}
+.click:after,
+.click:before {
+  content: "";
+  display: block;
+  position: absolute;
+  transform-origin: 0 0;
+}
+.click:before {
+  background: #d66801;
+  height: var(--progress);
+  left: 0;
+  top: 100%;
+  transform: rotateX(-90deg);
+  transition: height 0.2s;
+  width: 100%;
+}
+.click:after {
+  background: #d66801;
+  height: 100%;
+  left: 100%;
+  top: 0;
+  transform: rotateY(90deg);
+  transition: width 0.2s;
+  width: var(--progress);
+}
+.click:active {
+  --progress: 0px;
 }
 @media only screen and (max-width: 600px) {
     body {
