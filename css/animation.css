@@ -1,0 +1,42 @@
+
+.loading {
+    width: 61vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.loading-circle {
+    margin-left: -2vw;
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .loading-text {
+    color: white;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-left: -2vw;
+  }
+  
+  .typing-animation {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(30, end);
+  }
+  
+  .typing-text {
+    display: inline-block;
+    color: #4CAF50;
+    font-size: 18px;
+  }
