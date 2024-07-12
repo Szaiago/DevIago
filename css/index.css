@@ -17,8 +17,8 @@
     --colorShadeD: rgb(179, 179, 179);
     --colorShadeE: rgb(189, 189, 189);
     --colorShadeA-red: rgb(179, 0, 0);
-    --colorShadeB-red: rgb(194, 0, 0);
-    --colorShadeC-red: rgb(243, 0, 0);
+    --colorShadeB-red: rgb(187, 0, 0);
+    --colorShadeC-red: rgb(247, 63, 63);
     --colorShadeD-red: rgb(255, 77, 77);
     --colorShadeE-red: rgb(255, 102, 102);
   }
@@ -31,7 +31,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-image: url("../images/background-index.gif");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   
   .monitor {
@@ -81,6 +84,7 @@
     font-family: 'Courier New', Courier, monospace;
     padding: 20px;
     box-sizing: border-box;
+    border: 2px solid black;
   }
   
   .tela-monitor::-webkit-scrollbar {
