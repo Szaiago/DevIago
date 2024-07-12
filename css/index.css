@@ -16,6 +16,11 @@
     --colorShadeC: rgb(121, 121, 121);
     --colorShadeD: rgb(179, 179, 179);
     --colorShadeE: rgb(189, 189, 189);
+    --colorShadeA-red: rgb(179, 0, 0);
+    --colorShadeB-red: rgb(194, 0, 0);
+    --colorShadeC-red: rgb(243, 0, 0);
+    --colorShadeD-red: rgb(255, 77, 77);
+    --colorShadeE-red: rgb(255, 102, 102);
   }
   
   body {
@@ -154,7 +159,24 @@
     transform: translate3d(0, 0, -1em);
     box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
   }
-  
+  button.big-button.shutdown {
+    border: 2px solid var(--colorShadeA-red);
+    background: var(--colorShadeE-red);
+}
+
+button.big-button.shutdown::before {
+    background: var(--colorShadeC-red);
+    box-shadow: 0 0 0 2px var(--colorShadeB-red), 0 0.75em 0 0 var(--colorShadeA-red);
+}
+
+button.big-button.shutdown:hover {
+    background: var(--colorShadeD-red);
+}
+
+button.big-button.shutdown:active {
+    transform: translate(0em, 0.75em);
+    box-shadow: 0 0 0 2px var(--colorShadeB-red), 0 0.25em 0 0 var(--colorShadeB-red);
+}
   .suporte-monitor {
     width: 20vw;
     height: 15vh;
