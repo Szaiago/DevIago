@@ -7,20 +7,7 @@
   
   :root {
     --colorPrincipal: white;
-    --colorSecundaria: rgb(59, 59, 59);
-    --colorTerciaria: rgb(29, 29, 29);
-    --colorQuartenaria: rgb(65, 65, 65);
-    --colorQuintenaria: rgb(51, 51, 51);
-    --colorShadeA: rgb(77, 77, 77);
-    --colorShadeB: rgb(82, 82, 82);
-    --colorShadeC: rgb(121, 121, 121);
-    --colorShadeD: rgb(179, 179, 179);
-    --colorShadeE: rgb(189, 189, 189);
-    --colorShadeA-red: rgb(179, 0, 0);
-    --colorShadeB-red: rgb(187, 0, 0);
-    --colorShadeC-red: rgb(247, 63, 63);
-    --colorShadeD-red: rgb(255, 77, 77);
-    --colorShadeE-red: rgb(255, 102, 102);
+    --colorSecundaria: rgb(5, 5, 5);
   }
   
   body {
@@ -31,164 +18,64 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url("../images/background-index.gif");
+    background-image: url("../images/teste.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   }
-  
-  .monitor {
-    margin-top: 9vh;
-    width: 65vw;
-    height: 75vh;
-    border-radius: 30px;
-    background-color: var(--colorTerciaria);
-    box-shadow: 0 0 7px black;
+  .tela-monitor {
+    margin-left: 3vw;
+    width: 63vw;
+    height: 74vh;
+    position: absolute;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .moldura-monitor {
-    width: 63.5vw;
-    height: 72vh;
-    border: 3px solid var(--colorSecundaria);
-    border-radius: 25px;
-    background-color: var(--colorSecundaria);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .componenetes-monitor {
-    width: 61vw;
-    display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     justify-content: flex-start;
     align-items: center;
-    height: auto;
-    min-height: 70vh;
   }
-  
-  .tela-monitor {
-    width: 61vw;
-    height: 60vh;
-    border-radius: 25px;
-    background-color: var(--colorTerciaria);
-    position: relative;
-    overflow:auto;
-    overflow-x: hidden;
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    padding: 20px;
-    box-sizing: border-box;
-    border: 2px solid black;
-  }
-  
-  .tela-monitor::-webkit-scrollbar {
-    background-color: rgba(0, 0, 0, 0);
-  }
-  
-  .tela-monitor::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0);
-  }
-  .tela-monitor::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, 0);
-  }
-  .functions-monitor {
-    width: 61vw;
+  .menus-monitor {
+    width: 5vw;
+    height: 73vh;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    background-color: rgb(14, 14, 14);
   }
-  
-  button {
-    position: relative;
-    display: inline-block;
+  .energy {
+    margin-top: 10px;
+    font-size: 40px;
     cursor: pointer;
-    outline: none;
-    border: 0;
-    vertical-align: middle;
-    text-decoration: none;
-    font-size: 0.8rem;
-    color: var(--colorShadeA);
-    font-weight: 700;
-    text-transform: uppercase;
-    font-family: inherit;
-    margin: 5px;
+    border: none;
+    background-color: rgba(240, 248, 255, 0);
+  }
+  .energy-icon {
+    color: rgba(0, 255, 0, 0.822);
+    transition: color 1s;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+  }
+  .conteudo-monitor {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 60.5vw;
+    height: 73vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: rgb(14, 14, 14);
+  }
+  .conteudo-monitor::-webkit-scrollbar {
+    background-color: rgba(240, 248, 255, 0);    
   }
   
-  button.big-button {
-    padding: 1em 2em;
-    border: 2px solid var(--colorShadeA);
-    border-radius: 1em;
-    background: var(--colorShadeE);
-    transform-style: preserve-3d;
-    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  .conteudo-monitor::-webkit-scrollbar-track {
+    background-color: rgba(240, 248, 255, 0);
   }
   
-  button.big-button::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: var(--colorShadeC);
-    border-radius: inherit;
-    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
-    transform: translate3d(0, 0.75em, -1em);
-    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  .conteudo-monitor::-webkit-scrollbar-thumb {
+    background-color: rgba(240, 248, 255, 0);
   }
-  
-  button.big-button:hover {
-    background: var(--colorShadeD);
-    transform: translate(0, 0.375em);
-  }
-  
-  button.big-button:hover::before {
-    transform: translate3d(0, 0.75em, -1em);
-  }
-  
-  button.big-button:active {
-    transform: translate(0em, 0.75em);
-  }
-  
-  button.big-button:active::before {
-    transform: translate3d(0, 0, -1em);
-    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
-  }
-  button.big-button.shutdown {
-    border: 2px solid var(--colorShadeA-red);
-    background: var(--colorShadeE-red);
-}
-
-button.big-button.shutdown::before {
-    background: var(--colorShadeC-red);
-    box-shadow: 0 0 0 2px var(--colorShadeB-red), 0 0.75em 0 0 var(--colorShadeA-red);
-}
-
-button.big-button.shutdown:hover {
-    background: var(--colorShadeD-red);
-}
-
-button.big-button.shutdown:active {
-    transform: translate(0em, 0.75em);
-    box-shadow: 0 0 0 2px var(--colorShadeB-red), 0 0.25em 0 0 var(--colorShadeB-red);
-}
-  .suporte-monitor {
-    width: 20vw;
-    height: 15vh;
-    border: 2px solid var(--colorTerciaria);
-    border-radius: 5px 5px 0 0;
-    background-color: var(--colorQuintenaria);
-  }
-  
   @media only screen and (max-width: 600px) {
     body {
       min-height: 100vh;
