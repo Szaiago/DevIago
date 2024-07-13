@@ -72,16 +72,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Mostra tela de carregamento
             conteudoMonitor.innerHTML = `
-                <div class="loading">
+                <div class="loading show">
                     <div class="loading-circle"></div>
                     <div class="loading-text">Loading</div>
                 </div>
             `;
 
+            // Adiciona a classe 'show' para a transição
+            setTimeout(() => {
+                document.querySelector('.loading').classList.add('show');
+            }, 10);
+
             // Simula um tempo de carregamento de 5 segundos
             loadingTimeout = setTimeout(function() {
                 conteudoMonitor.innerHTML = '<div class="typing-animation"></div>';
                 let typingAnimation = document.querySelector('.typing-animation');
+
+                // Adiciona a classe 'show' para a transição
+                setTimeout(() => {
+                    typingAnimation.classList.add('show');
+                }, 10);
 
                 comandos.forEach((comando, index) => {
                     typingTimeout = setTimeout(() => {
@@ -92,9 +102,12 @@ document.addEventListener('DOMContentLoaded', function() {
                             welcomeTimeout = setTimeout(() => {
                                 typingAnimation.innerHTML = ''; // Limpa o conteúdo anterior
                                 typingAnimation.innerHTML = `<div class="welcome-text">Bem Vindo User!</div>`;
-                                // Estiliza a mensagem de boas-vindas
+                                // Adiciona a classe 'show' para a transição e estiliza a mensagem de boas-vindas
+                                setTimeout(() => {
+                                    typingAnimation.querySelector('.welcome-text').classList.add('show');
+                                }, 10);
                                 typingAnimation.style.fontSize = '30px';
-                                typingAnimation.style.color = 'rgba(0, 255, 0, 0.822)';
+                                typingAnimation.style.color = 'red';
                                 typingAnimation.style.display = 'flex';
                                 typingAnimation.style.justifyContent = 'center';
                                 typingAnimation.style.alignItems = 'center';
@@ -113,11 +126,16 @@ document.addEventListener('DOMContentLoaded', function() {
         function showShutdownAnimation() {
             // Mostra tela de carregamento
             conteudoMonitor.innerHTML = `
-                <div class="loading">
+                <div class="loading show">
                     <div class="loading-circle"></div>
                     <div class="loading-text">Turning off</div>
                 </div>
             `;
+
+            // Adiciona a classe 'show' para a transição
+            setTimeout(() => {
+                document.querySelector('.loading').classList.add('show');
+            }, 10);
 
             // Simula um tempo de carregamento de 5 segundos
             loadingTimeout = setTimeout(function() {
