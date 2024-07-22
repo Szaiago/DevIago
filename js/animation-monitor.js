@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var loadingTimeout;
     var typingTimeout;
     var welcomeTimeout;
+    var hideWelcomeTimeout;
+    var zoomTimeout;
 
     energyButton.addEventListener('click', function() {
         var conteudoMonitor = document.querySelector('.conteudo-monitor');
@@ -13,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
         clearTimeout(loadingTimeout);
         clearTimeout(typingTimeout);
         clearTimeout(welcomeTimeout);
+        clearTimeout(hideWelcomeTimeout);
+        clearTimeout(zoomTimeout);
 
         // Desabilita o botão durante a animação
         energyButton.disabled = true;
@@ -99,6 +103,15 @@ document.addEventListener('DOMContentLoaded', function() {
                                 // Adiciona a classe 'show-welcome' para a transição
                                 setTimeout(() => {
                                     typingAnimation.querySelector('.welcome-text').classList.add('show-welcome');
+                                    // Remove a mensagem de boas-vindas após 3 segundos
+                                    hideWelcomeTimeout = setTimeout(() => {
+                                        typingAnimation.querySelector('.welcome-text').classList.remove('show-welcome');
+                                        // Adiciona a animação de zoom
+                                        typingAnimation.innerHTML = '<div class="tela-monitor"></div>';
+                                        setTimeout(() => {
+                                            document.querySelector('.tela-monitor').classList.add('zoom-fullscreen');
+                                        }, 10);
+                                    }, 3000);
                                 }, 10);
                             }, 2000); // Exibe após 2 segundos
                         }

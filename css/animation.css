@@ -55,3 +55,21 @@
 .show-welcome {
   opacity: 1;
 }
+.tela-monitor {
+  margin-left: 3vw;
+  width: 63vw;
+  height: 74vh;
+  position: absolute;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+  transition: transform 3s ease-in-out, width 3s ease-in-out, height 3s ease-in-out, margin-left 3s ease-in-out;
+}
+.zoom-fullscreen {
+  transform: scale(1);
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(14, 14, 14);
+  margin-left: 0;
+}
