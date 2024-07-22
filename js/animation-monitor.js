@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Altera o estado da animação
         isAnimating = !isAnimating;
         if (isAnimating) {
-            energyIcon.style.color = 'red';
             startAnimation();
         } else {
             showShutdownAnimation();
@@ -88,11 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 conteudoMonitor.innerHTML = '<div class="typing-animation"></div>';
                 let typingAnimation = document.querySelector('.typing-animation');
 
-                // Adiciona a classe 'show' para a transição
-                setTimeout(() => {
-                    typingAnimation.classList.add('show');
-                }, 10);
-
                 comandos.forEach((comando, index) => {
                     typingTimeout = setTimeout(() => {
                         typingAnimation.innerHTML += `<div class="typing-text">${comando}</div><br>`;
@@ -102,16 +96,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             welcomeTimeout = setTimeout(() => {
                                 typingAnimation.innerHTML = ''; // Limpa o conteúdo anterior
                                 typingAnimation.innerHTML = `<div class="welcome-text">Bem Vindo User!</div>`;
-                                // Adiciona a classe 'show' para a transição e estiliza a mensagem de boas-vindas
+                                // Adiciona a classe 'show-welcome' para a transição
                                 setTimeout(() => {
-                                    typingAnimation.querySelector('.welcome-text').classList.add('show');
+                                    typingAnimation.querySelector('.welcome-text').classList.add('show-welcome');
                                 }, 10);
-                                typingAnimation.style.fontSize = '30px';
-                                typingAnimation.style.color = 'red';
-                                typingAnimation.style.display = 'flex';
-                                typingAnimation.style.justifyContent = 'center';
-                                typingAnimation.style.alignItems = 'center';
-                                typingAnimation.style.height = '100%';
                             }, 2000); // Exibe após 2 segundos
                         }
                     }, index * 1000); // Ajuste o tempo de exibição de cada linha aqui
@@ -142,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 cancelAnimation();
                 // Habilita o botão após a animação de desligamento
                 energyButton.disabled = false;
-                energyIcon.style.color = 'rgba(0, 255, 0, 0.822)';
             }, 5000);
         }
 

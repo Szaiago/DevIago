@@ -44,8 +44,14 @@
 .welcome-text {
   font-size: 30px;
   color: #4CAF50;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
   display: flex;
+  margin-top: 33vh;
   justify-content: center;
   align-items: center;
   height: 100%;
+}
+.show-welcome {
+  opacity: 1;
 }
